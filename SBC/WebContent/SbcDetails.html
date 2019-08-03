@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="ISO-8859-1">
+
+<title>SBC</title>
+<style>
+tr
+{
+text-align:center;
+}
+
+</style>
+ 
+</head>
+ 
+<body>
+<script src="validation.js"></script>
+<div> 
+<form name="f1" method="" action="">
+ 
+<table border="1" align="center" width="400" bgcolor="#CCCCCC" >
+ 
+<caption><h1>SBC Registration form</h1></caption>
+ 
+	<tr>
+	 
+	     <th>Si.no</th>
+	 
+	     <td><input type="text" name="fn" id="fn1" maxlength="10" title="enter your first name" placeholder="" required/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>Box Name</th>
+		 
+		<td><input type="text" name="BoxName"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>Ip Address</th>
+		 
+		<td><input type="text" name="Ip"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>EMA UserName</th>
+		 
+		<td><input type="text" name="UserName"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>EMA Password</th>
+		 
+		<td><input type="password" name="password"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>BMC Ip</th>
+		 
+		<td><input type="text" name="BmcIp"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>BMC UserName</th>
+		 
+		<td><input type="text" name="BmcIpusername"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>BMC Password</th>
+		 
+		<td><input type="password" name="BmcPass"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>Software Load</th> 
+		<td><input type="text" name="SoftwareLoad"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>Assign To</th> 
+		<td><input type="text" name="Assign"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>Reversed By</th>
+		 
+		<td><input type="text" name="ReversedBy"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+	    <th>Reserved Until</th>
+			 
+		<td><input type="text" name="Reserved"/></td>
+	 
+	</tr>
+ 
+	<tr>
+	 
+		<th>VLAN</th>
+			 
+		<td><input type="text" name="Vlan"/></td>
+	 
+	</tr>
+	<tr>
+	 
+		<th>Comments</th>
+			 
+		<td><input type="text" name="Cmts"/></td>
+	 
+	</tr>
+</table>
+<div class="centerBlock" style="text-align:center; margin-top: 25px;"><input type="submit" name="submit" onclick="ValidateIPaddress(document.f1.Ip, document.f1.Vlan, document.f1.BmcIp)"/></div>
+</form>
+</div> 
+</body>
+ 
+</html>
