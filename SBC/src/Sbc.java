@@ -49,7 +49,7 @@ public class Sbc extends HttpServlet
 		// System.out.println(System.getProperty("java.class.path"));
 			//C:\Users\cprakash\Downloads\apache-tomee-8.0.0-M3-webprofile\webapps\student\src
 		 //String path="C:/Users/cprakash/eclipse-workspace/SBC/WebContent/employees.json";
-				try (FileReader reader = new FileReader("/SBC/WebContent/employees.json"))
+				try (FileReader reader = new FileReader("C:/Users/cprakash/eclipse-workspace/SBC/WebContent/employees.json"))
 				{
 					//Read JSON file
 							Object obj = jsonParser.parse(reader);
@@ -89,9 +89,21 @@ public class Sbc extends HttpServlet
 				{
 					e.printStackTrace();
 				}
+				if(z==1)
+				{
+					System.out.println("GO");
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("SbcDetails");
+				    requestDispatcher.include(req, res);
+				    
+				}
+				else
+				{
+					RequestDispatcher requestDispatcher = req.getRequestDispatcher("Error");
+				    requestDispatcher.include(req, res);
+				}
+				
 		
 		
-		res.getWriter().append("Served at: ").append(req.getContextPath());
 	}
 
 	/**

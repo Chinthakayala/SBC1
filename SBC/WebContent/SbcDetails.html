@@ -3,6 +3,7 @@
 
 <head>
  <meta charset="ISO-8859-1">
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
 <title>SBC</title>
 <style>
@@ -18,7 +19,7 @@ text-align:center;
 <body>
 <script src="validation.js"></script>
 <div> 
-<form name="f1" method="" action="">
+<form name="f1" method="get">
  
 <table border="1" align="center" width="400" bgcolor="#CCCCCC" >
  
@@ -28,7 +29,7 @@ text-align:center;
 	 
 	     <th>Si.no</th>
 	 
-	     <td><input type="text" name="fn" id="fn1" maxlength="10" title="enter your first name" placeholder="" required/></td>
+	     <td><input type="text" name="si.no" id="fn1" maxlength="10" title="enter your first name" placeholder="" required/></td>
 	 
 	</tr>
  
@@ -36,7 +37,7 @@ text-align:center;
 	 
 		<th>Box Name</th>
 		 
-		<td><input type="text" name="BoxName"/></td>
+		<td><input type="text" id="fn2" name="BoxName" required/></td>
 	 
 	</tr>
  
@@ -44,7 +45,7 @@ text-align:center;
 	 
 		<th>Ip Address</th>
 		 
-		<td><input type="text" name="Ip"/></td>
+		<td><input type="text" id="fn3" name="Ip" required/></td>
 	 
 	</tr>
  
@@ -52,7 +53,7 @@ text-align:center;
 	 
 		<th>EMA UserName</th>
 		 
-		<td><input type="text" name="UserName"/></td>
+		<td><input type="text" id="fn4" name="UserName" required/></td>
 	 
 	</tr>
  
@@ -60,7 +61,7 @@ text-align:center;
 	 
 		<th>EMA Password</th>
 		 
-		<td><input type="password" name="password"/></td>
+		<td><input type="password" id="fn5" name="password" required/></td>
 	 
 	</tr>
  
@@ -68,7 +69,7 @@ text-align:center;
 	 
 		<th>BMC Ip</th>
 		 
-		<td><input type="text" name="BmcIp"/></td>
+		<td><input type="text" id="fn6" name="BmcIp" required/></td>
 	 
 	</tr>
  
@@ -76,7 +77,7 @@ text-align:center;
 	 
 		<th>BMC UserName</th>
 		 
-		<td><input type="text" name="BmcIpusername"/></td>
+		<td><input type="text" id="fn7" name="BmcIpusername" required/></td>
 	 
 	</tr>
  
@@ -84,21 +85,21 @@ text-align:center;
 	 
 		<th>BMC Password</th>
 		 
-		<td><input type="password" name="BmcPass"/></td>
+		<td><input type="password" id="fn8" name="BmcPass" required/></td>
 	 
 	</tr>
  
 	<tr>
 	 
 		<th>Software Load</th> 
-		<td><input type="text" name="SoftwareLoad"/></td>
+		<td><input type="text" id="fn9" name="SoftwareLoad" required/></td>
 	 
 	</tr>
  
 	<tr>
 	 
 		<th>Assign To</th> 
-		<td><input type="text" name="Assign"/></td>
+		<td><input type="text" id="fn10" name="Assign" required/></td>
 	 
 	</tr>
  
@@ -106,7 +107,7 @@ text-align:center;
 	 
 		<th>Reversed By</th>
 		 
-		<td><input type="text" name="ReversedBy"/></td>
+		<td><input type="text" id="fn11" name="ReversedBy" required/></td>
 	 
 	</tr>
  
@@ -114,7 +115,7 @@ text-align:center;
 	 
 	    <th>Reserved Until</th>
 			 
-		<td><input type="text" name="Reserved"/></td>
+		<td><input type="text" id="fn12" name="Reserved" required/></td>
 	 
 	</tr>
  
@@ -122,18 +123,19 @@ text-align:center;
 	 
 		<th>VLAN</th>
 			 
-		<td><input type="text" name="Vlan"/></td>
+		<td><input type="text" id="fn13" name="Vlan"/></td>
 	 
 	</tr>
 	<tr>
 	 
 		<th>Comments</th>
 			 
-		<td><input type="text" name="Cmts"/></td>
+		<td><input type="text" id="fn14" name="Cmts"/></td>
 	 
 	</tr>
 </table>
-<div class="centerBlock" style="text-align:center; margin-top: 25px;"><input type="submit" name="submit" onclick="ValidateIPaddress(document.f1.Ip, document.f1.Vlan, document.f1.BmcIp)"/></div>
+<div class="centerBlock" style="text-align:center; margin-top: 25px;"><input type="button" name="submit" onclick="ValidateIPaddress(document.f1.Ip, document.f1.Vlan, document.f1.BmcIp)" value="submit"/></div>
+<a href="logout.jsp" value="Submit">Logout</a>
 </form>
 </div> 
 </body>

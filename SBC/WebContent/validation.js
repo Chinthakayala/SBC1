@@ -27,5 +27,24 @@ function ValidateIPaddress(inputText1="", inputText2="", inputText="" )
 
 		if(!isValid) {
 			alert(s1);
+			return false;
+		} else {
+			statusCheck();
+			
 		}
  }
+
+function statusCheck() {
+	$.ajax({
+        type: "GET",
+        url: "/SBC/JsonWriting",
+        data: {
+            ts: $.now(),
+            sino: $('#fn1').val(), BoxName:$('#fn2').val(), Ip:$('#fn3').val(),
+            UserName:$('#fn4').val(), password:$('#fn5').val(), BmcIp:$('#fn6').val(),
+            BmcIpusername:$('#fn7').val(), BmcPass:$('#fn8').val(), SoftwareLoad:$('#fn9').val(),
+            Assign:$('#fn10').val(), ReversedBy:$('#fn11').val(), Reserved:$('#fn12').val(),
+            Vlan:$('#fn13').val(), Cmts:$('#fn14').val()
+        }
+	});
+}
