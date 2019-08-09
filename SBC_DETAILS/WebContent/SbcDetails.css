@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+h1{
+	text-align: center;
+	color:blue;
+}
+a
+{
+	text-decoration: none;
+}
+.btn
+{
+	margin: 0 auto;
+}
