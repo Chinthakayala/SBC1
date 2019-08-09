@@ -8,24 +8,33 @@
  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
 <title>SBC</title>
-<style>
-tr
-{
-text-align:center;
-}
-
-</style>
+<link rel='stylesheet' type='text/css' href='SbcDetails.css'>
  
 </head>
  
 <body>
+<%
+String userName = null;
+Cookie[] cookies = request.getCookies();
+	if(cookies !=null)
+	{
+			for(Cookie cookie : cookies)
+			{
+				if(cookie.getName().equals("userName"))
+					userName = cookie.getValue();
+			}
+	}
+if(userName == null) 
+	response.sendRedirect("Login.jsp");
+%>
+
 <script src="validation.js"></script>
 <div> 
 <form name="f1" method="get">
  
 <table border="1" align="center" width="400" bgcolor="#CCCCCC" >
  
-<caption><h1>SBC Registration form</h1></caption>
+<caption><h1>SBC Registration Form</h1></caption>
  
 	<tr>
 	 

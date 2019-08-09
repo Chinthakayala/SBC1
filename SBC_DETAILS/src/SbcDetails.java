@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,20 @@ public class SbcDetails extends HttpServlet
 	@SuppressWarnings("rawtypes")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		
+			String userName = null;
+			Cookie[] cookies = request.getCookies();
+			if(cookies !=null)
+			{
+				for(Cookie cookie : cookies)
+				{
+					if(cookie.getName().equals("userName")) 
+						userName = cookie.getValue();
+				}
+			}
+		if(userName == null)
+			response.sendRedirect("Login.jsp");
+		
 		System.out.println("hello");
 		PrintWriter pw=response.getWriter();
 		response.setContentType("text/html");
@@ -92,10 +107,12 @@ public class SbcDetails extends HttpServlet
 					e.printStackTrace();
 				}
 	       }
-		pw.println("</table>");
+		pw.println("</table></br></br>");
 		pw.println("<div class='btn' align='center'>");
-		 pw.println("<a href='' target=\"_blank\"><input type='submit' value='LOGOUT'>"); 
-		 pw.println("<a href='\\SBC_DETAILS\\SbcDetails.jsp' target=\"_blank\"> <input type='submit' value='Add SBC'> </link>");
+		pw.println("<form action='Logout' method='get' >");
+		 pw.println("<input type='submit' value='LOGOUT' class='btn1'> </form>"); 
+		 
+		 pw.println("<a href='\\SBC_DETAILS\\SbcDetails.jsp' target=\"_blank\"> <input type='submit' value='Add SBC' class='btn1'> </link>");
 		 pw.println("</div>");
 		 pw.println("</body>");
 		 pw.println("</html>");

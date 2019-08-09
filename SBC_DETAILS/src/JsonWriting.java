@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,18 @@ public class JsonWriting extends HttpServlet
 	      @SuppressWarnings({ "unused", "unchecked" })
 			protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 			{
+	    	  String userName = null;
+				Cookie[] cookies = request.getCookies();
+				if(cookies !=null)
+				{
+					for(Cookie cookie : cookies)
+					{
+						if(cookie.getName().equals("userName")) 
+							userName = cookie.getValue();
+					}
+				}
+			if(userName == null)
+				response.sendRedirect("Login.jsp");
 				PrintWriter pw=response.getWriter();
 				response.setContentType("text/html");
 				System.out.println("Hey im at JsonWriting");
@@ -56,7 +69,7 @@ public class JsonWriting extends HttpServlet
 								 * RequestDispatcher requestDispatcher = request.getRequestDispatcher("Sucess");
 								 * requestDispatcher.include(request, response);
 								 */
-							pw.println("<html><head></head><body><h4>Record Inserted Sucessfully!</h4></body></html>");
+			         RequestDispatcher rd = getServletContext().getRequestDispatcher("sbcDetails");
 				 
 				        } 
 						catch (Exception e) 

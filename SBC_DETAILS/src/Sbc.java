@@ -63,13 +63,21 @@ public class Sbc extends HttpServlet
 				if(z==1)
 				{
 					System.out.println("GO");
-					RequestDispatcher requestDispatcher = req.getRequestDispatcher("SbcDetails");
-				    requestDispatcher.include(req, res);
+					Cookie c=new Cookie("userName",s1+"");
+					res.addCookie(c);
+					res.sendRedirect("SbcDetails");
+			/*
+			 * RequestDispatcher requestDispatcher = req.getRequestDispatcher("SbcDetails");
+			 * requestDispatcher.include(req, res);
+			 */
 				    
 				}
 				else
 				{
-					pw.println("Invalid Credentials!");
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/Login.jsp");
+					
+					pw.println("<font color=red align='center'>Either user name or password is wrong.</font>");
+					rd.include(req, res);
 				}
 				
 		

@@ -17,7 +17,7 @@
 <form action="Sbc" method="post"  >
    <table align="center" >
    <tr>
-      <td><font face="verdana" size="2px">Name:</font></td>
+      <td><font face="verdana" size="2px">Name:</font></td> 	
       <td><input type="text" name="userName"></td>
    </tr>
    <tr>
